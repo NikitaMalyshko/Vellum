@@ -1,0 +1,184 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ===== Цвета светлой темы ===== -->
+    <Color x:Key="WindowBackgroundColor">#F3F3F3</Color>
+    <Color x:Key="PanelBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="PanelLighterBackground">#F5F5F5</Color>
+    <Color x:Key="PanelDarkerBackground">#E8E8E8</Color>
+    <Color x:Key="SidebarBackgroundColor">#F0F0F0</Color>
+    <Color x:Key="TabBackgroundColor">#E8E8E8</Color>
+    <Color x:Key="TabActiveBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="TabHoverBackgroundColor">#DCDCDC</Color>
+    <Color x:Key="ForegroundColor">#333333</Color>
+    <Color x:Key="ForegroundDarkerColor">#888888</Color>
+    <Color x:Key="AccentColor">#007ACC</Color>
+    <Color x:Key="AccentHoverColor">#1C97EA</Color>
+    <Color x:Key="AccentDarkerColor">#005A9E</Color>
+    <Color x:Key="BorderColor">#CCCCCC</Color>
+    <Color x:Key="ErrorColor">#E51400</Color>
+    <Color x:Key="SuccessColor">#16825D</Color>
+    <Color x:Key="WarningColor">#BF8803</Color>
+    <Color x:Key="EditorBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="EditorForegroundColor">#333333</Color>
+    <Color x:Key="MenuItemHoverColor">#E0E0E0</Color>
+    <Color x:Key="ButtonHoverColor">#DCDCDC</Color>
+    <Color x:Key="ScrollbarBackgroundColor">#F0F0F0</Color>
+    <Color x:Key="ScrollbarThumbColor">#C1C1C1</Color>
+    <Color x:Key="TitleBarBackgroundColor">#F3F3F3</Color>
+    <Color x:Key="StatusBarBackgroundColor">#007ACC</Color>
+
+    <!-- ===== Кисти ===== -->
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="{StaticResource WindowBackgroundColor}"/>
+    <SolidColorBrush x:Key="PanelBackgroundBrush" Color="{StaticResource PanelBackgroundColor}"/>
+    <SolidColorBrush x:Key="PanelLighterBrush" Color="{StaticResource PanelLighterBackground}"/>
+    <SolidColorBrush x:Key="PanelDarkerBrush" Color="{StaticResource PanelDarkerBackground}"/>
+    <SolidColorBrush x:Key="SidebarBackgroundBrush" Color="{StaticResource SidebarBackgroundColor}"/>
+    <SolidColorBrush x:Key="TabBackgroundBrush" Color="{StaticResource TabBackgroundColor}"/>
+    <SolidColorBrush x:Key="TabActiveBrush" Color="{StaticResource TabActiveBackgroundColor}"/>
+    <SolidColorBrush x:Key="TabHoverBrush" Color="{StaticResource TabHoverBackgroundColor}"/>
+    <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}"/>
+    <SolidColorBrush x:Key="ForegroundDarkerBrush" Color="{StaticResource ForegroundDarkerColor}"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+    <SolidColorBrush x:Key="AccentHoverBrush" Color="{StaticResource AccentHoverColor}"/>
+    <SolidColorBrush x:Key="AccentDarkerBrush" Color="{StaticResource AccentDarkerColor}"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}"/>
+    <SolidColorBrush x:Key="ErrorBrush" Color="{StaticResource ErrorColor}"/>
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}"/>
+    <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}"/>
+    <SolidColorBrush x:Key="EditorBackgroundBrush" Color="{StaticResource EditorBackgroundColor}"/>
+    <SolidColorBrush x:Key="EditorForegroundBrush" Color="{StaticResource EditorForegroundColor}"/>
+    <SolidColorBrush x:Key="MenuItemHoverBrush" Color="{StaticResource MenuItemHoverColor}"/>
+    <SolidColorBrush x:Key="ButtonHoverBrush" Color="{StaticResource ButtonHoverColor}"/>
+    <SolidColorBrush x:Key="ScrollbarBackgroundBrush" Color="{StaticResource ScrollbarBackgroundColor}"/>
+    <SolidColorBrush x:Key="ScrollbarThumbBrush" Color="{StaticResource ScrollbarThumbColor}"/>
+    <SolidColorBrush x:Key="TitleBarBackgroundBrush" Color="{StaticResource TitleBarBackgroundColor}"/>
+    <SolidColorBrush x:Key="StatusBarBackgroundBrush" Color="{StaticResource StatusBarBackgroundColor}"/>
+
+    <!-- ===== Стиль окна ===== -->
+    <Style TargetType="Window">
+        <Setter Property="Background" Value="{StaticResource WindowBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="FontSize" Value="13"/>
+    </Style>
+
+    <!-- ===== Стиль кнопки ===== -->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource PanelLighterBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="12,6"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4"
+                            Padding="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="True">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource ButtonHoverBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource AccentDarkerBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ===== Стиль TextBox ===== -->
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource PanelDarkerBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="6,4"/>
+        <Setter Property="CaretBrush" Value="{StaticResource ForegroundBrush}"/>
+        <Setter Property="SelectionBrush" Value="{StaticResource AccentBrush}"/>
+    </Style>
+
+    <!-- ===== Стиль TabControl ===== -->
+    <Style TargetType="TabControl">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <!-- ===== Стиль TabItem ===== -->
+    <Style TargetType="TabItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundDarkerBrush}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            BorderThickness="0,0,0,2"
+                            BorderBrush="Transparent">
+                        <ContentPresenter x:Name="contentPresenter"
+                                          ContentSource="Header"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource TabHoverBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource TabActiveBrush}"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource AccentBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ===== Стиль MenuItem ===== -->
+    <Style TargetType="MenuItem">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="8,4"/>
+    </Style>
+
+    <!-- ===== Стиль ContextMenu ===== -->
+    <Style TargetType="ContextMenu">
+        <Setter Property="Background" Value="{StaticResource PanelBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <!-- ===== Стиль Separator ===== -->
+    <Style TargetType="Separator">
+        <Setter Property="Background" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="Height" Value="1"/>
+        <Setter Property="Margin" Value="0,2"/>
+    </Style>
+
+    <!-- ===== Стиль ScrollBar ===== -->
+    <Style TargetType="ScrollBar">
+        <Setter Property="Width" Value="10"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+</ResourceDictionary>
